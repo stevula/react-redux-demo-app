@@ -1,0 +1,20 @@
+/*
+  modified from .secondary-content in order to allow more than one
+  https://github.com/Dogfalo/materialize/blob/f66e68e8455464c77c252a8149e872d86056ca04/sass/components/_global.scss#L615-L618
+  https://github.com/Dogfalo/materialize/blob/f66e68e8455464c77c252a8149e872d86056ca04/sass/components/_global.scss#L566-L570
+ */
+
+.vote-button {
+  color: #26a69a;
+  float: right;
+  position: absolute;
+  top: 16px;
+}
+
+.vote-button:nth-child(1n) {
+  right: 48px;
+}
+
+.vote-button:nth-child(2n) {
+  right: 16px;
+}

@@ -1,30 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { CollectionItem, Icon } from 'react-materialize';
+import VoteButton from '../VoteButton';
 
-const ContributorCard = (props) => {
+const ContributorCard = ({
+  avatar_url,
+  login,
+  onClickDownvote,
+  onClickUpvote,
+  votes,
+}) => {
   return (
     <CollectionItem className="avatar">
       {/* avatar */}
       <img
         className="circle"
-        src={props.avatar_url}
-        alt={`avatar for ${props.login}`}
+        src={avatar_url}
+        alt={`avatar for ${login}`}
       />
 
       {/* username */}
-      <span className="title" >{props.login}</span>
-      <p>Votes: {props.votes}</p>
+      <span className="title" >{login}</span>
+      <p>Votes: {votes}</p>
 
-      {/* upboat */}
-      <a href="#!" className="secondary-content" role="button" >
+      <VoteButton onClick={onClickUpvote} value={1} >
         <Icon>thumb_up</Icon>
-      </a>
+      </VoteButton>
 
-      {/* downboat */}
-      <a href="#!" className="secondary-content" role="button" style={{ right: 48 }} >
+      <VoteButton onClick={onClickDownvote} value={-1} >
         <Icon>thumb_down</Icon>
-      </a>
+      </VoteButton>
     </CollectionItem>
   );
 };
@@ -32,7 +37,20 @@ const ContributorCard = (props) => {
 ContributorCard.propTypes = {
   avatar_url: PropTypes.string.isRequired,
   login: PropTypes.string.isRequired,
+  onClickDownvote: PropTypes.func.isRequired,
+  onClickUpvote: PropTypes.func.isRequired,
   votes: PropTypes.number.isRequired,
 };
+
+
+/**
+<a href="#!" className="secondary-content" role="button" >
+  <Icon>thumb_up</Icon>
+</a>
+
+<a href="#!" className="secondary-content" role="button" style={{ right: 48 }} >
+  <Icon>thumb_down</Icon>
+</a>
+*/
 
 export default ContributorCard;
