@@ -5,6 +5,7 @@ import VoteButton from '../VoteButton';
 
 const ContributorCard = ({
   avatar_url,
+  html_url,
   id,
   login,
   onClickDownvote,
@@ -14,14 +15,16 @@ const ContributorCard = ({
   return (
     <CollectionItem className="avatar">
       {/* avatar */}
-      <img
-        className="circle"
-        src={avatar_url}
-        alt={`avatar for ${login}`}
-      />
+      <a href={html_url} target="_blank">
+        <img
+          className="circle"
+          src={avatar_url}
+          alt={`avatar for ${login}`}
+        />
+      </a>
 
       {/* username */}
-      <span className="title" >{login}</span>
+      <a className="title" href={html_url} target="_blank">{login}</a>
 
       {/* vote count */}
       <p>Score: {votes}</p>
@@ -51,6 +54,7 @@ const ContributorCard = ({
 
 ContributorCard.propTypes = {
   avatar_url: PropTypes.string.isRequired,
+  html_url: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
   login: PropTypes.string.isRequired,
   onClickDownvote: PropTypes.func.isRequired,
