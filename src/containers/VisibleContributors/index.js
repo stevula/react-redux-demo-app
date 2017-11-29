@@ -6,7 +6,7 @@ import ContributorsList from '../../components/ContributorsList';
 const mapStateToProps = (state) => {
   return {
     contributors: state.contributors.filter((contributor) => {
-      return contributor.login.includes(state.filterStartsWith);
+      return contributor.login.startsWith(state.filterStartsWith);
     })
   };
 };
