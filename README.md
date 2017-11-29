@@ -20,3 +20,11 @@ npm install
 ```
 npm start
 ```
+
+#### Features
+- View an up-to-date list of Redux contributors (refreshed on application start).
+- Filter contributors by name.
+- Vote contributors up or down.
+
+#### Design Choices
+- User can vote more than once.
