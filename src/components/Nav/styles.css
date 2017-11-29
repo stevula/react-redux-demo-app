@@ -1,0 +1,7 @@
+/*
+  hide the react-materialize hamburger menu since we have no nav-items.
+  otherwise we'd have to patch the library or build our own Navbar component.
+ */
+.button-collapse {
+  display: none;
+}
