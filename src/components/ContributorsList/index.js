@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Collection } from 'react-materialize';
 import ContributorCard from '../ContributorCard';
 
@@ -12,6 +13,10 @@ const ContributorsList = ({ contributors }) => {
       }
     </Collection>
   );
+};
+
+ContributorsList.propTypes = {
+  contributors: PropTypes.array.isRequired,
 };
 
 export default ContributorsList;
