@@ -24,7 +24,7 @@ const ContributorCard = ({
       <span className="title" >{login}</span>
 
       {/* vote count */}
-      <p>Votes: {votes}</p>
+      <p>Score: {votes}</p>
 
       {/* upvote */}
       <VoteButton
