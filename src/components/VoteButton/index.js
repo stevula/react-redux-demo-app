@@ -13,6 +13,10 @@ const VoteButton = ({ children, onClick }) => {
 };
 
 VoteButton.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]).isRequired,
   onClick: PropTypes.func.isRequired,
 };
 
