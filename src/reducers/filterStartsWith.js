@@ -1,12 +1,12 @@
 import { SET_FILTER } from '../actions';
 
-const filter = (state = '', action) => {
+const filterStartsWith = (state = '', action) => {
   switch (action.type) {
     case SET_FILTER:
-      return action.contains;
+      return action.startsWith;
     default:
       return state;
   }
 };
 
-export default filter;
+export default filterStartsWith;

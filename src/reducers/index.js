@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import contributors from './contributors';
-import filterSubstring from './filterSubstring';
+import filterStartsWith from './filterStartsWith';
 
 const reducers = combineReducers({
   contributors,
-  filterSubstring,
+  filterStartsWith,
 });
 
 export default reducers;

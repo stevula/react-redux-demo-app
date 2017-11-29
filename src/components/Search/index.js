@@ -1,5 +1,7 @@
 import React from 'react';
-import { Input, Icon } from 'react-materialize';
+import { connect } from 'react-redux';
+import { Icon } from 'react-materialize';
+import { setFilter } from '../../actions';
 
 const Search = () => {
   return (
@@ -7,10 +9,17 @@ const Search = () => {
     // implements search input differently
     <form>
       <div className="input-field">
-        <input id="search" type="search" required placeholder="Search contributors" />
+        <input
+          id="search"
+          type="search"
+          placeholder="Search contributors"
+          required
+        />
+
         <label className="label-icon" htmlFor="search">
           <Icon>search</Icon>
         </label>
+
         <Icon>close</Icon>
       </div>
     </form>

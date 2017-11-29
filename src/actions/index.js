@@ -2,10 +2,10 @@ export const SET_FILTER = 'SET_FILTER';
 export const UPVOTE = 'UPVOTE';
 export const DOWNVOTE = 'DOWNVOTE';
 
-export const setFilter = (substring) => {
+export const setFilter = (startsWith) => {
   return {
     type: SET_FILTER,
-    contains: substring
+    startsWith
   };
 };
 
