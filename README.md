@@ -27,4 +27,5 @@ npm start
 - Vote contributors up or down.
 
 #### Design Choices
-- User can vote more than once.
+- User is allowed to vote more than once so as to demo the voting system (and there is no user auth to prevent this anyways).
+- I used [react-materialize](https://react-materialize.github.io)'s implementation of [MaterializeCSS](http://materializecss.com/) for its styles/layouts and some generic components.
