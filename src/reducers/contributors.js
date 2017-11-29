@@ -1,6 +1,7 @@
 import { UPVOTE, DOWNVOTE } from '../actions';
 
 const contributors = (state = [], action) => {
+  console.log(action);
   switch (action.type) {
     case UPVOTE:
       return state.map((contributor) => {
@@ -23,7 +24,13 @@ const contributors = (state = [], action) => {
         return contributor;
       })
     default:
-      return state;
+      return state.map((contributor) => {
+        if ('votes' in contributor) return contributor;
+        return {
+          ...contributor,
+          votes: 0
+        }
+      });
   }
 };
 

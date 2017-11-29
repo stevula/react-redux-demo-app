@@ -5,6 +5,7 @@ import VoteButton from '../VoteButton';
 
 const ContributorCard = ({
   avatar_url,
+  id,
   login,
   onClickDownvote,
   onClickUpvote,
@@ -21,13 +22,27 @@ const ContributorCard = ({
 
       {/* username */}
       <span className="title" >{login}</span>
+
+      {/* vote count */}
       <p>Votes: {votes}</p>
 
-      <VoteButton onClick={onClickUpvote} value={1} >
+      {/* upvote */}
+      <VoteButton
+        onClick={(e) => {
+          e.preventDefault();
+          onClickUpvote(id);
+        }}
+      >
         <Icon>thumb_up</Icon>
       </VoteButton>
 
-      <VoteButton onClick={onClickDownvote} value={-1} >
+      {/* downvote */}
+      <VoteButton
+        onClick={(e) => {
+          e.preventDefault();
+          onClickDownvote(id);
+        }}
+      >
         <Icon>thumb_down</Icon>
       </VoteButton>
     </CollectionItem>
@@ -36,6 +51,7 @@ const ContributorCard = ({
 
 ContributorCard.propTypes = {
   avatar_url: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   login: PropTypes.string.isRequired,
   onClickDownvote: PropTypes.func.isRequired,
   onClickUpvote: PropTypes.func.isRequired,

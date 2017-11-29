@@ -4,15 +4,21 @@ export const DOWNVOTE = 'DOWNVOTE';
 
 export const setFilter = (substring) => {
   return {
-    action: SET_FILTER,
+    type: SET_FILTER,
     contains: substring
   };
 };
 
-export const upvote = () => {
-  return { action: UPVOTE };
+export const upvote = (id) => {
+  return {
+    type: UPVOTE,
+    id
+  };
 };
 
-export const downvote = () => {
-  return { action: DOWNVOTE };
+export const downvote = (id) => {
+  return {
+    type: DOWNVOTE,
+    id
+  };
 };

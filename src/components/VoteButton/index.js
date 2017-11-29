@@ -1,14 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon } from 'react-materialize';
 import './styles.css';
 
 const VoteButton = ({ children, onClick, value }) => {
   return (
     <a href="#" className="vote-button" role="button" onClick={onClick} >
-      <Icon>
-        {children}
-      </Icon>
+      {children}
     </a>
   );
 };
