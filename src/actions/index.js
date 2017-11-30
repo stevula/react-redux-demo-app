@@ -1,7 +1,5 @@
 import GitHubApi from 'github';
 
-const github = new GitHubApi();
-
 export const REQUEST_CONTRIBUTORS = 'REQUEST_CONTRIBUTORS';
 export const requestContributors = () => {
   return { type: REQUEST_CONTRIBUTORS };
@@ -32,17 +30,37 @@ export const downvote = (id) => {
   return { type: DOWNVOTE, id };
 };
 
-export function fetchContributors(/*{ page = 0, perPage = 100}*/) {
-  return (dispatch) => {
+export const fetchContributors = () => {
+  const github = new GitHubApi();
+
+  return async (dispatch) => {
     dispatch(requestContributors());
-    return github.repos.getContributors({ owner: 'reactjs', repo: 'redux' })
-      .then(
-        response => dispatch(receiveContributors(response.data)),
-        // Do not use catch, because that will also catch
-        // any errors in the dispatch and resulting render,
-        // causing a loop of 'Unexpected batch number' errors.
-        // https://github.com/facebook/react/issues/6895
-        error => dispatch(requestContributorsFail(error))
-      );
+
+    try {
+      const contributors = await fetchAllPages();
+      debugger
+      dispatch(receiveContributors(contributors));
+    } catch (error) {
+      dispatch(requestContributorsFail(error));
+    }
+  }
+
+  async function fetchAllPages() {
+    let result = await github.repos.getContributors({
+      owner: 'reactjs',
+      repo: 'redux',
+      per_page: 100,
+      page: 1
+    });
+    let contributors = result.data;
+
+    let nextPage = github.hasNextPage(result);
+    while (nextPage) {
+      result = await github.getNextPage(result);
+      contributors = contributors.concat(result.data);
+      nextPage = github.hasNextPage(result);
+    }
+
+    return contributors;
   }
 };
