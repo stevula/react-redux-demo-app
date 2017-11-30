@@ -5,9 +5,11 @@ import ContributorsList from '../../components/ContributorsList';
 
 const mapStateToProps = (state) => {
   return {
-    contributors: state.contributors.filter((contributor) => {
-      return contributor.login.startsWith(state.filterStartsWith);
-    })
+    contributors: state.contributors
+      .filter((contributor) => {
+        return contributor.login.startsWith(state.filterStartsWith);
+      })
+      .sort((a, b) => b.votes - a.votes)
   };
 };
 
