@@ -38,7 +38,6 @@ export const fetchContributors = () => {
 
     try {
       const contributors = await fetchAllPages();
-      debugger
       dispatch(receiveContributors(contributors));
     } catch (error) {
       dispatch(requestContributorsFail(error));
