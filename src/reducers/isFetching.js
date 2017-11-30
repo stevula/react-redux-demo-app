@@ -9,6 +9,9 @@ const isFetching = (state = false, action) => {
     case REQUEST_CONTRIBUTORS:
       return true;
     case REQUEST_CONTRIBUTORS_FAIL:
+      // TODO: create a separate error state and render error
+      console.log('error: ', action.error);
+      return false;
     case RECEIVE_CONTRIBUTORS:
       return false;
     default:
