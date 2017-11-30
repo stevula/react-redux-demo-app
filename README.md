@@ -23,7 +23,7 @@ npm start
 
 #### Features
 - View an up-to-date list of Redux contributors (refreshed on application start).
-- Filter contributors by name.
+- Filter contributors by GitHub handle ("starts with").
 - Vote contributors up or down.
 
 #### Design Choices

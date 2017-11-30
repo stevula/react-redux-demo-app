@@ -2,26 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { Container } from 'react-materialize'
 import './index.css';
-import SiteHeader from './components/SiteHeader';
-import Search from './components/Search';
-import VisibleContributors from './containers/VisibleContributors';
 import registerServiceWorker from './registerServiceWorker';
 import reducers from './reducers';
 import contributors from './contributors.js';
+import App from './components/App';
 
 const store = createStore(reducers, { contributors });
 
 ReactDOM.render(
   <Provider store={store} >
-    <Container>
-      <SiteHeader />
-      <Search />
-      <VisibleContributors />
-    </Container>
+    <App />
   </Provider>,
   document.getElementById('root')
 );
+
+// Endpoint: https://api.github.com/repos/reactjs/redux/contributors
 
 registerServiceWorker();
