@@ -4,14 +4,12 @@ import SiteHeader from '../../components/SiteHeader';
 import Search from '../../components/Search';
 import VisibleContributors from '../VisibleContributors';
 
-const App = () => {
-  return (
-    <Container>
-      <SiteHeader />
-      <Search />
-      <VisibleContributors />
-    </Container>
-  );
-};
+const App = () => (
+  <Container>
+    <SiteHeader />
+    <Search />
+    <VisibleContributors />
+  </Container>
+);
 
 export default App;

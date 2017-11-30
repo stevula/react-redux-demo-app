@@ -1,3 +1,7 @@
+import GitHubApi from 'github';
+
+const github = new GitHubApi();
+
 export const REQUEST_CONTRIBUTORS = 'REQUEST_CONTRIBUTORS';
 export const requestContributors = () => {
   return { type: REQUEST_CONTRIBUTORS };
@@ -28,18 +32,17 @@ export const downvote = (id) => {
   return { type: DOWNVOTE, id };
 };
 
-export function fetchContributors(subreddit) {
-  return function(dispatch) {
-    dispatch(requestContributors(subreddit));
-    return fetch('https://api.github.com/repos/reactjs/redux/contributors')
+export function fetchContributors(/*{ page = 0, perPage = 100}*/) {
+  return (dispatch) => {
+    dispatch(requestContributors());
+    return github.repos.getContributors({ owner: 'reactjs', repo: 'redux' })
       .then(
-        response => response.json(),
+        response => dispatch(receiveContributors(response.data)),
         // Do not use catch, because that will also catch
         // any errors in the dispatch and resulting render,
         // causing a loop of 'Unexpected batch number' errors.
         // https://github.com/facebook/react/issues/6895
         error => dispatch(requestContributorsFail(error))
-      )
-      .then(response => dispatch(receiveContributors(response)));
+      );
   }
-}
+};
