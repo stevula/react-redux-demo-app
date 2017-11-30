@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container } from 'react-materialize'
-import SiteHeader from '../SiteHeader';
-import Search from '../Search';
-import VisibleContributors from '../../containers/VisibleContributors';
+import SiteHeader from '../../components/SiteHeader';
+import Search from '../../components/Search';
+import VisibleContributors from '../VisibleContributors';
 
 const App = () => {
   return (
