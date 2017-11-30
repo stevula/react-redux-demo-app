@@ -1,7 +1,11 @@
 /*
-  modified from .secondary-content in order to allow more than one
+  modified from .secondary-content in order to allow more than one item
   https://github.com/Dogfalo/materialize/blob/f66e68e8455464c77c252a8149e872d86056ca04/sass/components/_global.scss#L615-L618
   https://github.com/Dogfalo/materialize/blob/f66e68e8455464c77c252a8149e872d86056ca04/sass/components/_global.scss#L566-L570
+
+  I considered doing something like `.secondary-content + .secondary-content` to
+  override the styles, but that could introduce a subtle bug if materialize
+  changed the selectors.
  */
 
 .vote-button {

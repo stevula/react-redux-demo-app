@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import { upvote, downvote } from '../../actions';
 import ContributorsList from '../../components/ContributorsList';
 
-
 const mapStateToProps = (state) => {
   return {
     contributors: state.contributors
@@ -20,10 +19,10 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-
-const VisibileContributors = connect(
+// the contributors list filtered by search input and sorted by votes
+const VisibleContributors = connect(
   mapStateToProps,
   mapDispatchToProps
 )(ContributorsList);
 
-export default VisibileContributors
+export default VisibleContributors

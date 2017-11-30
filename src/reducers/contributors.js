@@ -1,5 +1,6 @@
 import { UPVOTE, DOWNVOTE, RECEIVE_CONTRIBUTORS } from '../actions';
 
+// the list of contributors including their votes/score
 const contributors = (state = [], action) => {
   switch (action.type) {
     case RECEIVE_CONTRIBUTORS:

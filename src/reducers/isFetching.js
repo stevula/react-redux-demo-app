@@ -4,6 +4,7 @@ import {
   RECEIVE_CONTRIBUTORS
 } from '../actions';
 
+// whether contributors data is pending response from GitHub
 const isFetching = (state = false, action) => {
   switch (action.type) {
     case REQUEST_CONTRIBUTORS:

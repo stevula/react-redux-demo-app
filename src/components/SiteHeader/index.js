@@ -3,6 +3,7 @@ import { Navbar } from 'react-materialize'
 import './styles.css';
 import reduxLogo from '../../redux-logo.png';
 
+// top bar with site logo
 const SiteHeader = () => {
   // NOTE: logo height = $navbar-height from materialize-css:
   // https://github.com/Dogfalo/materialize/blob/f66e68e8455464c77c252a8149e872d86056ca04/sass/components/_variables.scss#L238

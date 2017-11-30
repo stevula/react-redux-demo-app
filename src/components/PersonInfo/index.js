@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Avatar from '../Avatar';
 
+// text and image associated with contributor profile
 const PersonInfo = ({ image, login, profile, votes}) => {
   return (
     <div>

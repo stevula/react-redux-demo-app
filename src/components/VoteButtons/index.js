@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Icon } from 'react-materialize';
 import VoteButton from '../VoteButton';
 
+// upvote and downvote UI
 const VoteButtons = ({ onClickUpvote, onClickDownvote }) => {
   return (
     <div>

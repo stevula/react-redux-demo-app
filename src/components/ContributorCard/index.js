@@ -4,6 +4,8 @@ import { CollectionItem } from 'react-materialize';
 import PersonInfo from '../PersonInfo';
 import VoteButtons from '../VoteButtons';
 
+// card showing information and vote buttons for a contributor
+// TODO camelize the snakecase fields (unchanged from GH response)
 const ContributorCard = ({
   avatar_url,
   html_url,

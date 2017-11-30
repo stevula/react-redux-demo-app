@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Icon } from 'react-materialize';
 import { setFilter } from '../../actions';
 
+// input field for filtering contributors list
 let Search = ({ dispatch }) => {
   let input;
 

@@ -4,6 +4,7 @@ import store from '../../store';
 import App from '../App';
 import { fetchContributors } from '../../actions';
 
+// fetch all pages of contributors from GitHub
 store.dispatch(fetchContributors());
 
 class Root extends Component {

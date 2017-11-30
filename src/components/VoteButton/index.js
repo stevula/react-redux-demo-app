@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
 
+// upvote or downvote button with icon passed as child
 const VoteButton = ({ children, onClick }) => {
   return (
     // materialize-css requires these to be <a> instead of <button> :-/
