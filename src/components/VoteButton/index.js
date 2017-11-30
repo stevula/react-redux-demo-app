@@ -6,7 +6,10 @@ const VoteButton = ({ children, onClick }) => {
   return (
     // materialize-css requires these to be <a> instead of <button> :-/
     // use of role attr should address accessibility resulting from that
-    <a href="#" className="vote-button" role="button" onClick={onClick} >
+    <a href="#" className="vote-button" role="button" onClick={(e) => {
+      e.preventDefault();
+      onClick();
+    }} >
       {children}
     </a>
   );

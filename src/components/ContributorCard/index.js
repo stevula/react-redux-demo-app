@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { CollectionItem } from 'react-materialize';
-import UserInfo from '../UserInfo';
+import PersonInfo from '../PersonInfo';
 import VoteButtons from '../VoteButtons';
 
 const ContributorCard = ({
@@ -15,7 +15,7 @@ const ContributorCard = ({
 }) => {
   return (
     <CollectionItem className="avatar">
-      <UserInfo
+      <PersonInfo
         image={avatar_url}
         login={login}
         profile={html_url}

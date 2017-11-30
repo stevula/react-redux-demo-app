@@ -7,22 +7,12 @@ const VoteButtons = ({ onClickUpvote, onClickDownvote }) => {
   return (
     <div>
       {/* upvote */}
-      <VoteButton
-        onClick={(e) => {
-          e.preventDefault();
-          onClickUpvote();
-        }}
-      >
+      <VoteButton onClick={onClickUpvote} >
         <Icon>thumb_up</Icon>
       </VoteButton>
 
       {/* downvote */}
-      <VoteButton
-        onClick={(e) => {
-          e.preventDefault();
-          onClickDownvote();
-        }}
-      >
+      <VoteButton onClick={onClickDownvote} >
         <Icon>thumb_down</Icon>
       </VoteButton>
     </div>

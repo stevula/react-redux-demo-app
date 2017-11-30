@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Avatar from '../Avatar';
 
-const UserInfo = ({ image, login, profile, votes}) => {
+const PersonInfo = ({ image, login, profile, votes}) => {
   return (
     <div>
       <Avatar imgSrc={image} login={login} profileUrl={profile} />
@@ -16,11 +16,11 @@ const UserInfo = ({ image, login, profile, votes}) => {
   );
 };
 
-UserInfo.propTypes = {
+PersonInfo.propTypes = {
   image: PropTypes.string.isRequired,
   login: PropTypes.string.isRequired,
   profile: PropTypes.string.isRequired,
   votes: PropTypes.number.isRequired
 };
 
-export default UserInfo;
+export default PersonInfo;
