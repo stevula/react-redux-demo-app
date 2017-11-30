@@ -1,3 +1,6 @@
+// dummy data from:
+// https://api.github.com/repos/reactjs/redux/contributors
+
 const contributors = [{
         "login": "gaearon",
         "id": 810438,

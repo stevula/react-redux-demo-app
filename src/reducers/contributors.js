@@ -1,15 +1,21 @@
-import { UPVOTE, DOWNVOTE } from '../actions';
+import { UPVOTE, DOWNVOTE, RECEIVE_CONTRIBUTORS } from '../actions';
 
 const contributors = (state = [], action) => {
-  console.log(action);
   switch (action.type) {
+    case RECEIVE_CONTRIBUTORS:
+      return action.contributors.map((contributor) => {
+        return {
+          ...contributor,
+          votes: 0
+        };
+      });
     case UPVOTE:
       return state.map((contributor) => {
         if (contributor.id === action.id) {
           return {
             ...contributor,
             votes: contributor.votes + 1
-          }
+          };
         }
         return contributor;
       })
@@ -19,18 +25,12 @@ const contributors = (state = [], action) => {
           return {
             ...contributor,
             votes: contributor.votes - 1
-          }
+          };
         }
         return contributor;
       })
     default:
-      return state.map((contributor) => {
-        if ('votes' in contributor) return contributor;
-        return {
-          ...contributor,
-          votes: 0
-        }
-      });
+      return state;
   }
 };
 

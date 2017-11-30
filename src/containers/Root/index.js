@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import reducers from '../../reducers';
-import contributors from '../../contributors.js';
+import store from '../../store';
 import App from '../App';
+import { fetchContributors } from '../../actions';
 
-const store = createStore(reducers, { contributors });
+store.dispatch(fetchContributors());
 
 class Root extends Component {
   render() {
